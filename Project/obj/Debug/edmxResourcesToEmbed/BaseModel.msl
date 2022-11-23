@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище pro17ModelContainer" CdmEntityContainer="pro17Entities">
+    <EntitySetMapping Name="PRAuto">
+      <EntityTypeMapping TypeName="pro17Model.PRAuto">
+        <MappingFragment StoreEntitySet="PRAuto">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="StNumber" ColumnName="StNumber" />
+          <ScalarProperty Name="Dayprice" ColumnName="Dayprice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRClient">
+      <EntityTypeMapping TypeName="pro17Model.PRClient">
+        <MappingFragment StoreEntitySet="PRClient">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="PassportSerial" ColumnName="PassportSerial" />
+          <ScalarProperty Name="PassportNumber" ColumnName="PassportNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRProcat">
+      <EntityTypeMapping TypeName="pro17Model.PRProcat">
+        <MappingFragment StoreEntitySet="PRProcat">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Client_ID" ColumnName="Client_ID" />
+          <ScalarProperty Name="AutoID" ColumnName="AutoID" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="DayCount" ColumnName="DayCount" />
+          <ScalarProperty Name="PriceByDay" ColumnName="PriceByDay" />
+          <ScalarProperty Name="ProcatPrice" ColumnName="ProcatPrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

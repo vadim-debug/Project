@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="pro17Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="PRAuto">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Year" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Dayprice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PRProcat" Relationship="Self.FK_PRProcat_PRAuto" FromRole="PRAuto" ToRole="PRProcat" />
+  </EntityType>
+  <EntityType Name="PRClient">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PassportSerial" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PassportNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PRProcat" Relationship="Self.FK_PRProcat_PRClient" FromRole="PRClient" ToRole="PRProcat" />
+  </EntityType>
+  <EntityType Name="PRProcat">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Client_ID" Type="Int32" />
+    <Property Name="AutoID" Type="Int32" />
+    <Property Name="StartTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DayCount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PriceByDay" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProcatPrice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PRAuto" Relationship="Self.FK_PRProcat_PRAuto" FromRole="PRProcat" ToRole="PRAuto" />
+    <NavigationProperty Name="PRClient" Relationship="Self.FK_PRProcat_PRClient" FromRole="PRProcat" ToRole="PRClient" />
+  </EntityType>
+  <Association Name="FK_PRProcat_PRAuto">
+    <End Role="PRAuto" Type="Self.PRAuto" Multiplicity="0..1" />
+    <End Role="PRProcat" Type="Self.PRProcat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRAuto">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PRProcat">
+        <PropertyRef Name="AutoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PRProcat_PRClient">
+    <End Role="PRClient" Type="Self.PRClient" Multiplicity="0..1" />
+    <End Role="PRProcat" Type="Self.PRProcat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRClient">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PRProcat">
+        <PropertyRef Name="Client_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="pro17Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="PRAuto" EntityType="Self.PRAuto" />
+    <EntitySet Name="PRClient" EntityType="Self.PRClient" />
+    <EntitySet Name="PRProcat" EntityType="Self.PRProcat" />
+    <AssociationSet Name="FK_PRProcat_PRAuto" Association="Self.FK_PRProcat_PRAuto">
+      <End Role="PRAuto" EntitySet="PRAuto" />
+      <End Role="PRProcat" EntitySet="PRProcat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PRProcat_PRClient" Association="Self.FK_PRProcat_PRClient">
+      <End Role="PRClient" EntitySet="PRClient" />
+      <End Role="PRProcat" EntitySet="PRProcat" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

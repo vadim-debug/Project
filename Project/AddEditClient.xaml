@@ -1,0 +1,44 @@
+﻿<Page x:Class="Project.AddEditClient"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Project"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddEditClient">
+
+    <Grid Background="white">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="183*"/>
+            <ColumnDefinition Width="617*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="42*"/>
+            <RowDefinition Height="54*"/>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="33*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="60*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock>Name</TextBlock>
+        <TextBlock Grid.Row="1">LastName</TextBlock>
+        <TextBlock Grid.Row="2">MiddleName</TextBlock>
+        <TextBlock Grid.Row="3">PassportSerial</TextBlock>
+        <TextBlock Grid.Row="4">PassportNumber</TextBlock>
+
+
+
+
+        <TextBox Text="{Binding Name}" Grid.Column="1" Grid.Row="0" Background="#BEBEBE" Width="500px" HorizontalAlignment="Left"></TextBox>
+        <TextBox Text="{Binding LastName}" Grid.Column="1" Grid.Row="1" Background="#BEBEBE" Width="500px" HorizontalAlignment="Left"></TextBox>
+        <TextBox Text="{Binding MiddleName}" Grid.Column="1" Grid.Row="2" Background="#BEBEBE" Width="500px" HorizontalAlignment="Left"></TextBox>
+        <TextBox Text="{Binding PassportSerial}" Grid.Column="1" Grid.Row="3" Background="#BEBEBE" Width="500px" HorizontalAlignment="Left"></TextBox>
+        <TextBox Text="{Binding PassportNumber}" Grid.Column="1" Grid.Row="4" Background="#BEBEBE" Width="500px" HorizontalAlignment="Left"></TextBox>
+
+
+
+        <Button Content="Сохранить" Grid.ColumnSpan="2" Grid.Row="5" Margin="0,5,0,0" Name="BtnSave" Click="BtnSave_Click"></Button>
+    </Grid>
+</Page>
