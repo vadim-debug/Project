@@ -16,14 +16,25 @@ using System.Windows.Shapes;
 namespace Project
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для ViewAuto.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ViewAuto : Page
     {
-        public MainWindow()
+        private PRAuto _CurrentAuto = new PRAuto();
+        public ViewAuto(PRAuto Selected_Auto)
         {
             InitializeComponent();
-            MainFrame.Content = new LoginPage();
+            if (Selected_Auto != null)
+            {
+                _CurrentAuto = Selected_Auto;
+            }
+
+            DataContext = _CurrentAuto;
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.GoBack();
         }
     }
 }

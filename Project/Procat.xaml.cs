@@ -40,7 +40,7 @@ namespace Project
 
         private void BtnBackToMain_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new HelloPage());
+            this.NavigationService.GoBack();
         }
     }
 }

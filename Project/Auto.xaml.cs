@@ -20,14 +20,33 @@ namespace Project
     /// </summary>
     public partial class Auto : Page
     {
-        public Auto()
+        string loginPerson1;
+        public Auto(String LoginPerson)
         {
+            
             InitializeComponent();
+            if (LoginPerson == "Client")
+            {
+                BtnAdd.Visibility = Visibility.Hidden;
+                BtnDel.Visibility = Visibility.Hidden;
+                
+                
+            }
+            loginPerson1 = LoginPerson;
         }
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
+            
         {
-            NavigationService.Navigate(new AddEditAuto((sender as Button).DataContext as PRAuto));
+            if (loginPerson1=="Manager")
+            {
+                NavigationService.Navigate(new ViewAuto((sender as Button).DataContext as PRAuto));
+            }
+            if (loginPerson1=="Admin")
+            {
+                NavigationService.Navigate(new AddEditAuto((sender as Button).DataContext as PRAuto));
+            }
+           
         }
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
@@ -39,7 +58,7 @@ namespace Project
         {
             var ClientForRemoving = DGridProject.SelectedItems.Cast<PRAuto>().ToList();
 
-            if (MessageBox.Show($"Вы точно хотите удалить следующие {ClientForRemoving.Count()}элементов ?", "Внимание",
+            if (MessageBox.Show($"Вы точно хотите удалить следующие {ClientForRemoving.Count()}элементов ? ", "Внимание",
                 MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 try
@@ -60,7 +79,7 @@ namespace Project
 
         private void BtnBackToMain_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new HelloPage());
+            this.NavigationService.GoBack();
         }
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
@@ -69,6 +88,11 @@ namespace Project
                 pro17Entities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
                 DGridProject.ItemsSource = pro17Entities.GetContext().PRAuto.ToList();
             }
+        }
+
+        private void Filter_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

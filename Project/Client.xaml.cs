@@ -20,9 +20,10 @@ namespace Project
     /// </summary>
     public partial class Client : Page
     {
-        public Client()
+        public Client(String LoginPerson)
         {
             InitializeComponent();
+          
         }
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
@@ -55,7 +56,7 @@ namespace Project
 
         private void BtnBackToMain_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new HelloPage());
+            this.NavigationService.GoBack();
         }
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)

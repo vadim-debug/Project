@@ -52,7 +52,7 @@ namespace Project
             {
                 pro17Entities.GetContext().SaveChanges();
                 MessageBox.Show("Информация сохранена");
-                NavigationService.Navigate(new Client());
+                this.NavigationService.GoBack();
             }
             catch (Exception ex)
             {

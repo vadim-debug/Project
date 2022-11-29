@@ -20,24 +20,40 @@ namespace Project
     /// </summary>
     public partial class HelloPage : Page
     {
-        public HelloPage()
+        String LoginPerson1;
+        public HelloPage(string LoginPerson)
         {
+            LoginPerson1 = LoginPerson;
             InitializeComponent();
+            if(LoginPerson== "Manager" || LoginPerson == "Client")
+            {
+                ToClient.Visibility = Visibility.Hidden;
+            }
+            if (LoginPerson == "Client")
+            {
+                ToProcat.Visibility = Visibility.Hidden;
+            }
         }
-
+        
         private void ToClient_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Client());
+           // MessageBox.Show(LoginPerson1);
+            NavigationService.Navigate(new Client(LoginPerson1));
         }
 
         private void ToAuto_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Auto());
+            NavigationService.Navigate(new Auto(LoginPerson1));
         }
 
         private void ToProcat_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Procat());
+        }
+
+        private void BackToLogin_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.GoBack();
         }
     }
 }
