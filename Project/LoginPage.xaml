@@ -9,10 +9,10 @@
       Title="LoginPage">
 
     <Grid Background="white">
-        <TextBlock HorizontalAlignment="Left" Margin="262,98,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="250,206,0,0" TextWrapping="Wrap" x:Name="LoginText"  VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="262,261,0,0" TextWrapping="Wrap" x:Name="PassText"  VerticalAlignment="Top" Width="120"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="250,310,0,0" x:Name="LoginBtn" Click="LoginBtn_Click" VerticalAlignment="Top" Height="44" Width="176" RenderTransformOrigin="0.492,0.604"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"><Run Language="ru-ru" Text="Прокат автомобилей"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
+        <TextBox HorizontalAlignment="Center" Margin="0,197,0,0" TextWrapping="Wrap" x:Name="LoginText"  VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Center" Margin="0,252,0,0" TextWrapping="Wrap" x:Name="PassText"  VerticalAlignment="Top" Width="120"/>
+        <Button Content="Вход" HorizontalAlignment="Center" Margin="0,325,0,0" x:Name="LoginBtn" Click="LoginBtn_Click" VerticalAlignment="Top" Height="44" Width="176" RenderTransformOrigin="0.492,0.604"/>
 
     </Grid>
 </Page>

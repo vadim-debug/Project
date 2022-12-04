@@ -10,8 +10,11 @@
     <Grid>
         <Button Content="Клиент" x:Name="ToClient" Click="ToClient_Click" HorizontalAlignment="Left" Margin="473,80,0,0" VerticalAlignment="Top" Height="83" Width="179" FontSize="18"/>
         <Button Content="Авто" x:Name="ToAuto" Click="ToAuto_Click" HorizontalAlignment="Left" Margin="129,80,0,0" VerticalAlignment="Top" Height="83" Width="179" FontSize="18"/>
-        <Button Content="Прокат" x:Name="ToProcat" Click="ToProcat_Click" HorizontalAlignment="Center" Margin="0,247,0,0" VerticalAlignment="Top" Height="83" Width="180" FontSize="18"/>
+        <Button Content="Прокат" x:Name="ToProcat" Click="ToProcat_Click" HorizontalAlignment="Left" Margin="117,242,0,0" VerticalAlignment="Top" Height="83" Width="180" FontSize="18"/>
         <Button x:Name="BackToLogin" Content="Назад" Click="BackToLogin_Click" HorizontalAlignment="Left" Margin="714,358,0,0" VerticalAlignment="Top"/>
+        <Button Content="Filter" HorizontalAlignment="Left" Margin="473,242,0,0" VerticalAlignment="Top" Name="Filter" Click="Filter_Click" RenderTransformOrigin="0.5,0.5" Height="83" Width="173" FontSize="18">
+
+        </Button>
 
     </Grid>
 </Page>

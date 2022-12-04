@@ -72,3 +72,5 @@ C:\Users\vadim\source\repos\Project\Project\Project\obj\Debug\LoginPage.g.cs
 C:\Users\vadim\source\repos\Project\Project\Project\obj\Debug\LoginPage.baml
 C:\Users\vadim\source\repos\Project\Project\Project\obj\Debug\ViewAuto.g.cs
 C:\Users\vadim\source\repos\Project\Project\Project\obj\Debug\ViewAuto.baml
+C:\Users\vadim\source\repos\Project\Project\Project\obj\Debug\Filter.g.cs
+C:\Users\vadim\source\repos\Project\Project\Project\obj\Debug\Filter.baml

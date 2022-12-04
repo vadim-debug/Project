@@ -37,7 +37,7 @@ namespace Project
         
         private void ToClient_Click(object sender, RoutedEventArgs e)
         {
-           // MessageBox.Show(LoginPerson1);
+        
             NavigationService.Navigate(new Client(LoginPerson1));
         }
 
@@ -54,6 +54,11 @@ namespace Project
         private void BackToLogin_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.GoBack();
+        }
+
+        private void Filter_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Filter(LoginPerson1));
         }
     }
 }
