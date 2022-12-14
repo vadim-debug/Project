@@ -36,6 +36,9 @@ namespace Project
           
         }
 
-       
+        private void Guest_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new HelloPage("Client"));
+        }
     }
 }

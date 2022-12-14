@@ -33,6 +33,7 @@ namespace Project
             {
                 ToProcat.Visibility = Visibility.Hidden;
             }
+            UserName.Text = LoginPerson;
         }
         
         private void ToClient_Click(object sender, RoutedEventArgs e)
